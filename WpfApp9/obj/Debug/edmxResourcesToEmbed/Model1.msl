@@ -4,9 +4,18 @@
     <EntitySetMapping Name="Users">
       <EntityTypeMapping TypeName="vlad_kModel.Users">
         <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Type" ColumnName="Type" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Login" ColumnName="Login" />
           <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserType">
+      <EntityTypeMapping TypeName="vlad_kModel.UserType">
+        <MappingFragment StoreEntitySet="UserType">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

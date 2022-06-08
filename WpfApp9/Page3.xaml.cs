@@ -29,7 +29,15 @@ namespace WpfApp9
         {
             var db = new vlad_kEntities();
             var Users = db.Users.Where ((user) => user.Login == Login.Text && user.Password == Password.Password).ToList();
-            
+            if(Users.Count > 0)
+            {
+                Console.WriteLine(db.UserType.Find( Users[0].Type).name);
+                NavigationService.Navigate(new login_i_parol(Users[0]));
+            }
+            else
+            {
+                MessageBox.Show("User is not found");
+            }
         }
     }
 }

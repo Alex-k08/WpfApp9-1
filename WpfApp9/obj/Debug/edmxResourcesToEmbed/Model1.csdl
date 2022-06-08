@@ -7,8 +7,35 @@
     <Property Name="Login" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Type" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="UserType" Relationship="vlad_kModel.FK_Users_UserType" FromRole="Users" ToRole="UserType" />
   </EntityType>
   <EntityContainer Name="vlad_kEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Users" EntityType="Self.Users" />
+    <EntitySet Name="UserType" EntityType="vlad_kModel.UserType" />
+    <AssociationSet Name="FK_Users_UserType" Association="vlad_kModel.FK_Users_UserType">
+      <End Role="UserType" EntitySet="UserType" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="UserType">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Users" Relationship="vlad_kModel.FK_Users_UserType" FromRole="UserType" ToRole="Users" />
+  </EntityType>
+  <Association Name="FK_Users_UserType">
+    <End Type="vlad_kModel.UserType" Role="UserType" Multiplicity="1" />
+    <End Type="vlad_kModel.Users" Role="Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserType">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="Type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

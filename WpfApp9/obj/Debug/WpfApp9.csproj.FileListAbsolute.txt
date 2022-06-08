@@ -27,3 +27,5 @@ C:\Users\User\source\repos\WpfApp9\WpfApp9\obj\Debug\WpfApp9.csproj.CoreCompileI
 C:\Users\User\source\repos\WpfApp9\WpfApp9\obj\Debug\WpfApp9.csproj.CopyComplete
 C:\Users\User\source\repos\WpfApp9\WpfApp9\obj\Debug\WpfApp9.exe
 C:\Users\User\source\repos\WpfApp9\WpfApp9\obj\Debug\WpfApp9.pdb
+C:\Users\User\source\repos\WpfApp9\WpfApp9\obj\Debug\login i parol.g.cs
+C:\Users\User\source\repos\WpfApp9\WpfApp9\obj\Debug\login i parol.baml

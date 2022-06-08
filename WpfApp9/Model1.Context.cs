@@ -26,5 +26,6 @@ namespace WpfApp9
         }
     
         public virtual DbSet<Users> Users { get; set; }
+        public virtual DbSet<UserType> UserType { get; set; }
     }
 }

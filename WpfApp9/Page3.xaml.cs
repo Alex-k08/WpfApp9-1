@@ -32,7 +32,14 @@ namespace WpfApp9
             if(Users.Count > 0)
             {
                 Console.WriteLine(db.UserType.Find( Users[0].Type).name);
-                NavigationService.Navigate(new login_i_parol(Users[0]));
+                if(Users[0].Type == 2)
+                {
+                    NavigationService.Navigate(new ForAdministrator(Users[0]));
+                }
+                else if (Users[0].Type == 1)
+                {
+                    NavigationService.Navigate(new login_i_parol(Users[0]));
+                }
             }
             else
             {
